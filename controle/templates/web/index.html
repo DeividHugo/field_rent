@@ -1,0 +1,34 @@
+{% extends 'web/base.html' %}
+
+{%block tema%}
+  {% for cidade in cidades %}
+    <h1 class="mt-5">{{cidade.nome}}</h1>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome do Clube:</th>
+          <th>Endereço:</th>
+          <th>Dimensão do Campo:</th>
+          <th>Preço por Hora:</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for clube in clubes %}
+          {% if cidade.nome == clube.cidade.nome %}
+            <tr>
+              <td>
+                <a href="$"> {{clube.nome}} </a>
+              </td>
+              <td>{{clube.endereco}}</td>
+              <td>{{clube.dimensao}}</td>
+              <td>{{clube.preco_hora}}R$</td>
+              <td></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+
+      </tbody>
+    </table>
+  {% endfor %}
+{%endblock%}

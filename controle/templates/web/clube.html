@@ -1,0 +1,58 @@
+{% extends 'web/base.html' %}
+
+{%block tema%}
+{% for clube in clubes %}
+  <h1 class="mt-5">{{ clube.nome }}</h1>
+  <dl>
+
+    <dt>Endereço: </dt>
+    <dd>{{ clube.endereco }}</dd>
+
+    <dt>Dimensão: </dt>
+    <dd>{{ clube.dimensao }}</dd>
+
+    <dt>Preço: </dt>
+    <dd>{{ clube.preco_hora }}R$</dd>
+
+    <dt>Dono</dt>
+    <dd>{{ clube.dono}}</dd>
+
+    <dt>Cidade</dt>
+    <dd>{{ clube.cidade }}</dd>
+
+    <form action="">
+        <dt>Quantos minutos deseja:</dt>
+        <dd>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id='valor' aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                  </div>
+              </div>
+        <button type="button" class="btn btn-primary" id='send'>Checar</button>
+        <button type="button" class="btn btn-primary">Enviar Definitivamente</button>
+    </form>
+  </dl>
+  <script>
+    var botao = document.querySelector('#send');
+    var preco_hora = {{clube.preco_hora}};
+    var span = document.querySelector('#inputGroup-sizing-default')
+    botao.addEventListener('click', function(e){
+
+        e.preventDefault();
+        
+        const valor = document.querySelector('#valor');
+        const value = valor.value;
+
+        const calculado = value*preco_hora/60
+
+        span.innerText=String(calculado.toFixed(2))+'R$'
+        span.style.backgroundColor='#007bff'
+        span.style.color='white'
+
+        
+    
+    })
+  </script>
+{% endfor %}
+{%endblock%}
