@@ -1,6 +1,7 @@
 {% extends 'web/base.html' %}
 
 {%block tema%}
+<<<<<<< HEAD
   {% for cidade in cidades %}
     <h1 class="mt-5">{{cidade.nome}}</h1>
     <br>
@@ -31,4 +32,45 @@
       </tbody>
     </table>
   {% endfor %}
+=======
+<h1 class="mt-5">Cidade</h1>
+<br>
+{{nome}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Clube</th>
+      <th>Dono</th>
+      <th>Endereço</th>
+      <th>Solicitar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="#"> João</a>
+      </td>
+      <td>Miranda</td>
+      <td>35 9 5555-5555</td>
+      <td>Família</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#"> Leandro</a>
+      </td>
+      <td>Moreira</td>
+      <td>35 9 8888-5555</td>
+      <td>Família</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#"> Fátima</a>
+      </td>
+      <td>Oliveira</td>
+      <td>35 9 9999-4352</td>
+      <td>Conhecidos</td>
+    </tr>
+  </tbody>
+</table>
+>>>>>>> 0c47fd46b6934b46aaaf3291c5edf8dde05cb55c
 {%endblock%}
