@@ -18,7 +18,7 @@
           {% if cidade.nome == clube.cidade.nome %}
             <tr>
               <td>
-                <a href="{% url 'clube' 1%}"> {{clube.nome}} </a>
+                <a href="{% url 'clube' clube.id%}"> {{clube.nome}} </a>
               </td>
               <td>{{clube.endereco}}</td>
               <td>{{clube.dimensao}}</td>
