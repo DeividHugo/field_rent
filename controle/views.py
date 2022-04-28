@@ -13,8 +13,8 @@ def index(request):
     })
 
 
-def clube(request, clube_nome):
-    clube = Clube.objects.get(id=clube_nome)
+def clube(request, clube_id):
+    clube = Clube.objects.get(id=clube_id)
     return render(request, 'web/clube.html', {
         'clube': clube
     })

@@ -1,7 +1,6 @@
 {% extends 'web/base.html' %}
 
 {%block tema%}
-{% for clube in clubes %}
   <h1 class="mt-5">{{ clube.nome }}</h1>
   <dl>
 
@@ -21,15 +20,20 @@
     <dd>{{ clube.cidade }}</dd>
 
     <form action="">
+        <dt>Email:</dt>
+        <dd>
+        <div class="form-group">
+            <input type="Email" name="email" class="form-control">
+          </div>
         <dt>Quantos minutos deseja:</dt>
         <dd>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id='valor' aria-label="Default" aria-describedby="inputGroup-sizing-default">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default"><b>Valor></b></span>
                   </div>
               </div>
-        <button type="button" class="btn btn-primary" id='send'>Checar</button>
+        <button type="button" class="btn btn-primary" id='send'>Checar Valor</button>
         <button type="button" class="btn btn-primary">Enviar Definitivamente</button>
     </form>
   </dl>
@@ -54,5 +58,4 @@
     
     })
   </script>
-{% endfor %}
 {%endblock%}
